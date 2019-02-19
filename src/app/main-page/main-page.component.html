@@ -1,0 +1,10 @@
+<p>
+  <a>Socket Io Example</a>
+<label>
+  Name:
+  <input type="text" [(ngModel)]="name" placeholder="Nickname">
+</label>
+
+<button (click)="joinChat(1)" [disabled]="name.trim() === ''">Join Chat 1 as {{name}}</button>
+<button (click)="joinChat(2)" [disabled]="name.trim() === ''">Join Chat 2 as {{name}}</button>
+</p>

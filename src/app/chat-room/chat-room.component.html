@@ -1,0 +1,16 @@
+<h1>Chat {{chat}}</h1>
+
+<h4 style="display: inline;">Connected users: </h4>
+<p class="users" *ngFor="let u of users; let i=index">{{u}}<span *ngIf="i!=users.length-1">, </span></p>
+
+<p *ngFor="let msg of messages">
+  <span [ngClass]="{'own':msg.from==nickname,'other':msg.from!=nickname}">{{msg.from}}: </span>{{msg.text}} <span class="date">{{
+    msg.created | date: "dd.MM hh:MM" }}</span>
+</p>
+
+<div class="fixed-at-bottom">
+  <input type="text" [(ngModel)]="message">
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+<div id="snackbar" [class]="showName">{{toastMsg}}</div>
