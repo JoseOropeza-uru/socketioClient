@@ -54,7 +54,7 @@ export class ChatRoomComponent implements OnInit {
         room: this.chat
       });
     });
-  }x
+  }
 
   ngOnDestroy() {
     console.log("bye");
